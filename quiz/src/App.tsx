@@ -3,6 +3,7 @@ import './global.css'
 import { QUESTIONS } from './data/QUESTIONS';
 import Quiz from './components/quiz/Quiz'
 import Result from './components/result/Result';
+import ProgressBar from './components/progressbar/ProgressBar';
 
 function App() {
 
@@ -28,21 +29,25 @@ function App() {
   }
 
 
+
   return (
     <>
       <h1>Quiz</h1>
       <div style={{ maxWidth: 600, margin: "0 auto", padding: 20 }}>
         {!finished ? (
-          <Quiz
-            question={QUESTIONS[currentIndex]}
-            onAnswer={handleAnswer}
-          />
+          <>
+            <ProgressBar current={currentIndex} total={QUESTIONS.length} />
+            <Quiz
+              question={QUESTIONS[currentIndex]}
+              onAnswer={handleAnswer}
+            />
+          </>
         ) : (
           <Result score={score} total={QUESTIONS.length} answers={answers} />
         )}
       </div>
     </>
-  )
+  );
 }
 
 export default App
