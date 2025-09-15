@@ -1,0 +1,16 @@
+h2 {
+  color: #e3ebedff;
+}
+
+.card {
+  margin: 2rem;
+  background: #262626;
+  border: 1px solid #333333;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 4px 5px rgba(14, 13, 13, 0.3);
+}

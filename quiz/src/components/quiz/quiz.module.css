@@ -1,0 +1,80 @@
+.quiz {
+  width: 100%;
+  background: #262626;
+  border: 1px solid #333333;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column; /* titre en haut, contenu en colonne */
+  gap: 16px;
+  box-shadow: 0 4px 5px rgba(14, 13, 13, 0.3);
+}
+
+.quiz h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #f1f1f1;
+}
+
+.choices {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.choiceItem {
+  display: flex;
+  align-items: center;
+}
+
+.choiceButton {
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #3d3d3dff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, transform 0.1s ease;
+  text-align: left;
+}
+
+.choiceButton:hover {
+  background: #606062ff;
+  transform: translateY(-1px);
+}
+
+.choiceButton:active {
+  background: #004080;
+  transform: translateY(0);
+}
+
+.choiceButton:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+.textInput {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #1e1e1e;
+  color: #f1f1f1;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.textInput::placeholder {
+  color: #aaa;
+}
+
+.textInput:focus {
+  outline: none;
+  border-color: #007bff;
+  background: #2c2c2c;
+}
