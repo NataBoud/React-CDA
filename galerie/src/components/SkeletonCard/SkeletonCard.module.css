@@ -1,0 +1,38 @@
+.skeletonCard {
+  background-color: #212833ff;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;          
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  animation: pulse 1.5s infinite;
+}
+
+.skeletonImage {
+  width: 100%;
+  height: 220px;
+  background-color: #2b303aff;
+}
+
+.skeletonContent {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.skeletonTitle,
+.skeletonAuthor,
+.skeletonCategories {
+  height: 16px;
+  background-color: #2a2e36;
+  border-radius: 4px;
+}
+
+@keyframes pulse {
+  0% { background-color: #2e333dff; }
+  50% { background-color: #363b44ff; }
+  100% { background-color: #2b303aff; }
+}

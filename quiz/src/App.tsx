@@ -7,6 +7,8 @@ import ProgressBar from './components/progressbar/ProgressBar';
 
 function App() {
 
+   
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [answers, setAnswers] = useState<string[]>([]);
@@ -25,10 +27,9 @@ function App() {
       setCurrentIndex((prev) => prev + 1);
     } else {
       setFinished(true);
+      
     }
   }
-
-
 
   return (
     <>
