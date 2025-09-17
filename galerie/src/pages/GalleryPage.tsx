@@ -1,66 +1,65 @@
 import { useEffect, useState } from "react";
-import './App.css';
-import CategoryFilter from "./components/CategoryFilter/CategoryFilter";
-import type { Category } from "./types";
-import { CATEGORIES, IMAGES } from "./data/data";
-import ImageCard from "./components/ImageCard/ImageCard";
-import SkeletonCard from "./components/SkeletonCard/SkeletonCard";
+import CategoryFilter from "../components/CategoryFilter/CategoryFilter";
+import type { Category } from "../types";
+import { CATEGORIES, IMAGES } from "../data/data";
+import ImageCard from "../components/ImageCard/ImageCard";
+import SkeletonCard from "../components/SkeletonCard/SkeletonCard";
 
-function App() {
+function GalleryPage() {
 
   const [selectedCategories, setSelectedCategories] = useState<Category[]>(["toutes"]);
   const [loading, setLoading] = useState(true);
   const [images, setImages] = useState<typeof IMAGES>([]);
   const [error, setError] = useState<string | null>(null);
 
-  const toggleCategory = (category: Category) => {
-    if (category === "toutes") {
-      setSelectedCategories(["toutes"]);
+  const toggleCategory = (cat: Category) => {
+    setSelectedCategories(prev => {
+      if (cat === "toutes") return ["toutes"];
 
-    } else {
-      setSelectedCategories((prev) => {
+      const activeWithoutToutes = prev.includes("toutes") ? [] : prev;
+      const next = activeWithoutToutes.includes(cat)
+        ? activeWithoutToutes.filter(c => c !== cat)   // si déjà présent → on retire
+        : [...activeWithoutToutes, cat];               // sinon → on ajoute
 
-        const newPrev = prev.filter((c) => c !== "toutes");
-
-        return prev.includes(category)
-          ? newPrev.filter((c) => c !== category)
-          : [...newPrev, category];
-      });
-    }
+      return next.length === 0 ? ["toutes"] : next;
+    });
   };
 
   const filteredImages =
     selectedCategories.includes("toutes")
-      ? IMAGES
-      : IMAGES.filter((img) =>
+      ? images
+      : images.filter((img) =>
         img.categories.some((cat) => selectedCategories.includes(cat))
       );
 
+
   useEffect(() => {
+    let cancelled = false;
     setLoading(true);
     setError(null);
 
-    const fetchData = async () => {
+    const timer = setTimeout(() => {
+      if (cancelled) return;
+
       try {
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-        // Simulation
-        // if (Math.random() < 0.3) {
-        //   throw new Error("Erreur lors du chargement des images !");
-        // }
-        setImages(IMAGES); // succès
-      } catch (err: unknown) {
-        if (err instanceof Error) {
-          setError(err.message);
-        } else {
-          setError("Une erreur inconnue est survenue");
-        }
+        // Simulation de succès
+        setImages(IMAGES);
+
+        // Simulation d'erreur
+        // throw new Error("Erreur lors du chargement des images !");
+      } catch (e) {
+        setError(e instanceof Error ? e.message : "Erreur inconnue");
       } finally {
         setLoading(false);
       }
-    };
+    }, 2000);
 
-    fetchData();
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
   }, []);
+
 
 
   return (
@@ -97,4 +96,4 @@ function App() {
   );
 }
 
-export default App;
+export default GalleryPage;
