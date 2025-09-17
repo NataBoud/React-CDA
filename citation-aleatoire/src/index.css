@@ -57,16 +57,20 @@ button:active {
 }
 
 h1 {
-  padding: 2rem .5rem;
+  padding: 2rem 0.5rem;
+  font-size: 2.5rem;
 }
 
 .quote-card {
   background: var(--panel);
   border-radius: var(--card-radius);
-  padding: 25px 30px;
+  padding: 5rem;
   width: 600px;
-  min-height: 300px;
+  min-height: 400px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
@@ -79,9 +83,10 @@ h1 {
 }
 
 .author {
-  font-weight: bold;
+  font-weight: 300;
   color: var(--muted);
   margin-top: 10px;
+  font-size: 1rem;
 }
 
 .buttons {
@@ -106,4 +111,10 @@ button:nth-child(2) {
 
 button:nth-child(2):hover {
   background: #16a34a;
+}
+
+.error {
+  color: #ef4444;
+  margin: 15px 0;
+  font-weight: bold;
 }
