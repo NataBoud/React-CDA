@@ -22,7 +22,7 @@ export default function Dashboard({ expenses }: DashboardProps) {
 
     return (
         <>
-            <Typography variant="h4" fontWeight="bold" sx={{ mb: 2}}>Suivi des Dépenses</Typography>
+            <Typography variant="h4" fontWeight="bold" sx={{ mb: 2, mt: 4}}>Suivi des Dépenses</Typography>
             <Paper elevation={3} sx={{ p: 2, backgroundColor: "#f0f3f8ff", borderRadius: 2, }} >
 
                 <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>

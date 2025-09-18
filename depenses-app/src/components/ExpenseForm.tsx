@@ -51,7 +51,7 @@ export default function ExpenseForm() {
                             required
                             fullWidth
                             slotProps={{ inputLabel: { sx: { fontSize: "0.8rem" } }, }}
-                            sx={{"& .MuiOutlinedInput-input": {padding: "10px"},}}
+                           
                         />
                     </Stack>
 
@@ -68,7 +68,7 @@ export default function ExpenseForm() {
                             required
                             fullWidth
                             slotProps={{inputLabel: { sx: { fontSize: "0.8rem" }},}}
-                            sx={{ "& .MuiOutlinedInput-input": { padding: "10px" }, }}
+                           
                         />
                     </Stack>
 
@@ -82,7 +82,6 @@ export default function ExpenseForm() {
                             value={category}
                             onChange={e => setCategory(e.target.value as Category)}
                             fullWidth
-                            sx={{ "& .MuiSelect-select": { color: 'rgba(0,0,0,0.87)', fontSize: "0.8rem", padding: "10px" } }}
                         >
                             {categories.map(cat => (
                                 <MenuItem key={cat} value={cat}>{cat}</MenuItem>
@@ -103,10 +102,6 @@ export default function ExpenseForm() {
                                 textField: {
                                     required: true,
                                     fullWidth: true,
-                                    sx: {
-                                        "& .MuiInputLabel-root": { fontSize: "0.8rem" }, 
-                                        "& .MuiInputBase-input": { fontSize: "0.8rem" }, 
-                                    },
                                 },
                             }}
                         />
