@@ -3,7 +3,22 @@ import type { ExpenseInterface } from "../interfaces/ExpenseInterface";
 import { v4 as uuidv4 } from "uuid";
 
 const initialState: { list: ExpenseInterface[] } = {
-    list: []
+    list: [
+        {
+            id: uuidv4(),
+            label: "Courses",
+            amount: 45.5,
+            category: "alimentation",
+            date: new Date().toISOString()
+        },
+        {
+            id: uuidv4(),
+            label: "Abonnement Netflix",
+            amount: 12.99,
+            category: "loisirs",
+            date: new Date().toISOString()
+        }
+    ]
 };
 
 const expensesSlice = createSlice({

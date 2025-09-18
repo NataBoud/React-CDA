@@ -6,14 +6,15 @@ import { Card, TextField, MenuItem, Button, Stack, Typography } from "@mui/mater
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 
-const categories: Category[] = ["alimentation", "transport", "loyer", "loisirs", "autre"];
+const categories: Category[] = ["Alimentation", "Transport", "Loyer", "Loisirs", "Autre"];
 
 export default function ExpenseForm() {
 
     const dispatch = useDispatch();
+    
     const [label, setLabel] = useState("");
     const [amount, setAmount] = useState<number | "">("");
-    const [category, setCategory] = useState<Category>("alimentation");
+    const [category, setCategory] = useState<Category>("Alimentation");
     const [date, setDate] = useState<Date | null>(null);
 
 
@@ -31,12 +32,12 @@ export default function ExpenseForm() {
         // reset form
         setLabel("");
         setAmount("");
-        setCategory("alimentation");
+        setCategory("Alimentation");
         setDate(null);
     }
 
     return (
-        <Card sx={{ margin: '2rem auto', p: 3, borderRadius: 2, boxShadow: 3, backgroundColor: "#f0f3f8ff", }}>
+        <Card sx={{ margin: '2rem auto', p: 2, borderRadius: 2, boxShadow: 3, backgroundColor: "#f0f3f8ff", }}>
             <form onSubmit={handleSubmit}>
                 <Stack spacing={2}>
                     {/* Libellé */}
@@ -98,10 +99,11 @@ export default function ExpenseForm() {
                             slotProps={{ textField: { required: true, fullWidth: true } }}
                         />
                     </Stack>
-
-                    <Button type="submit" variant="contained" color="primary" sx={{ alignSelf: "flex-end" }}>
+        
+                    <Button type="submit" variant="contained" color="primary" sx={{ alignSelf: "flex-end", mt: 4 }} >
                         Ajouter
                     </Button>
+                   
                 </Stack>
             </form>
         </Card>

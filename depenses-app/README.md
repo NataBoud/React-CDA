@@ -8,4 +8,4 @@ Développer une application React permettant de gérer une liste de dépenses :
 * Voir un résumé global et par catégorie.
 
 ### Page d’accueil
-![localhost_5175](./screenshots/localhost_5175_.png)
+![localhost_5175](./screenshots/localhost_5175.png)
