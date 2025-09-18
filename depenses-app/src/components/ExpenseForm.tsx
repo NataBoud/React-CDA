@@ -50,6 +50,8 @@ export default function ExpenseForm() {
                             onChange={e => setLabel(e.target.value)}
                             required
                             fullWidth
+                            slotProps={{ inputLabel: { sx: { fontSize: "0.8rem" } }, }}
+                            sx={{"& .MuiOutlinedInput-input": {padding: "10px"},}}
                         />
                     </Stack>
 
@@ -59,12 +61,14 @@ export default function ExpenseForm() {
                             Montant (€)
                         </Typography>
                         <TextField
-                            label="Montant"
+                            label="Ex. 12.50"
                             type="number"
                             value={amount}
                             onChange={e => setAmount(e.target.value === "" ? "" : Number(e.target.value))}
                             required
                             fullWidth
+                            slotProps={{inputLabel: { sx: { fontSize: "0.8rem" }},}}
+                            sx={{ "& .MuiOutlinedInput-input": { padding: "10px" }, }}
                         />
                     </Stack>
 
@@ -78,7 +82,7 @@ export default function ExpenseForm() {
                             value={category}
                             onChange={e => setCategory(e.target.value as Category)}
                             fullWidth
-                            sx={{ "& .MuiSelect-select": { color: 'rgba(0,0,0,0.87)' } }}
+                            sx={{ "& .MuiSelect-select": { color: 'rgba(0,0,0,0.87)', fontSize: "0.8rem", padding: "10px" } }}
                         >
                             {categories.map(cat => (
                                 <MenuItem key={cat} value={cat}>{cat}</MenuItem>
@@ -92,11 +96,21 @@ export default function ExpenseForm() {
                             Sélectionnez une date
                         </Typography>
                         <DatePicker
-                            label="Date"
+                            label="Ex. jj/mm/aaaa"
                             value={date}
                             onChange={(newValue) => setDate(newValue)}
-                            slotProps={{ textField: { required: true, fullWidth: true } }}
+                            slotProps={{
+                                textField: {
+                                    required: true,
+                                    fullWidth: true,
+                                    sx: {
+                                        "& .MuiInputLabel-root": { fontSize: "0.8rem" }, 
+                                        "& .MuiInputBase-input": { fontSize: "0.8rem" }, 
+                                    },
+                                },
+                            }}
                         />
+
                     </Stack>
 
                     <Button type="submit" variant="contained" color="primary" sx={{ alignSelf: "flex-end", mt: 4 }} >
