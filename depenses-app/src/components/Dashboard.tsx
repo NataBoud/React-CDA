@@ -1,11 +1,11 @@
 import { Card, Typography, Stack } from "@mui/material";
-import type { ExpenseInterface, Category } from "../interfaces/ExpenseInterface";
+import type { ExpenseInterface } from "../interfaces/ExpenseInterface";
+import { categories } from "../constants/categories";
+
 
 interface DashboardProps {
     expenses: ExpenseInterface[];
 }
-
-const categories: Category[] = ["Alimentation", "Transport", "Loyer", "Loisirs", "Autre"];
 
 export default function Dashboard({ expenses }: DashboardProps) {
 

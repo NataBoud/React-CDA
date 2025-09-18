@@ -1,4 +1,4 @@
-export type Category = "Alimentation" | "Transport" | "Loyer" | "Loisirs" | "Autre";
+import type { Category } from "../constants/categories";
 
 export interface ExpenseInterface {
     id: string;

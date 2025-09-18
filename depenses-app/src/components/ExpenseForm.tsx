@@ -1,17 +1,16 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import type { Category } from "../interfaces/ExpenseInterface";
+import { categories } from "../constants/categories"; // valeur (le tableau)
+import type { Category } from "../constants/categories"; // type
 import { addExpense } from "../store/expensesSlice";
 import { Card, TextField, MenuItem, Button, Stack, Typography } from "@mui/material";
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 
-const categories: Category[] = ["Alimentation", "Transport", "Loyer", "Loisirs", "Autre"];
-
 export default function ExpenseForm() {
 
     const dispatch = useDispatch();
-    
+
     const [label, setLabel] = useState("");
     const [amount, setAmount] = useState<number | "">("");
     const [category, setCategory] = useState<Category>("Alimentation");
@@ -99,11 +98,11 @@ export default function ExpenseForm() {
                             slotProps={{ textField: { required: true, fullWidth: true } }}
                         />
                     </Stack>
-        
+
                     <Button type="submit" variant="contained" color="primary" sx={{ alignSelf: "flex-end", mt: 4 }} >
                         Ajouter
                     </Button>
-                   
+
                 </Stack>
             </form>
         </Card>

@@ -8,14 +8,14 @@ const initialState: { list: ExpenseInterface[] } = {
             id: uuidv4(),
             label: "Courses",
             amount: 45.5,
-            category: "alimentation",
+            category: "Alimentation",
             date: new Date().toISOString()
         },
         {
             id: uuidv4(),
             label: "Abonnement Netflix",
             amount: 12.99,
-            category: "loisirs",
+            category: "Loisirs",
             date: new Date().toISOString()
         }
     ]
