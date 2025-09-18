@@ -7,7 +7,7 @@ interface ExpenseCardProps {
     onDelete?: (id: string) => void;
 }
 
-export default function ExpenseCard({ expense, onDelete }: ExpenseCardProps) {
+export default function ExpenseItem({ expense, onDelete }: ExpenseCardProps) {
     return (
         <Card elevation={3} sx={{ display: "flex", justifyContent: "space-between", p: 2, }}>
             <Stack>

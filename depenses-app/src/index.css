@@ -16,13 +16,10 @@
 
 body {
   background: var(--bg);
-  color: var(--text);
-  padding: var(--gap);
-}
-
-
-.form-container {
   max-width: 900px;
   width: 90%;
   margin: 1rem auto;
 }
+
+
+

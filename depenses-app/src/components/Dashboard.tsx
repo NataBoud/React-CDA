@@ -1,4 +1,4 @@
-import { Card, Typography, Stack } from "@mui/material";
+import { Card, Typography, Stack, Paper } from "@mui/material";
 import type { ExpenseInterface } from "../interfaces/ExpenseInterface";
 import { categories } from "../constants/categories";
 
@@ -21,20 +21,27 @@ export default function Dashboard({ expenses }: DashboardProps) {
     });
 
     return (
-        <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+        <>
+            <Typography variant="h4" fontWeight="bold" sx={{ mb: 2}}>Suivi des Dépenses</Typography>
+            <Paper elevation={3} sx={{ p: 2, backgroundColor: "#f0f3f8ff", borderRadius: 2, }} >
 
-            <Card sx={{ p: 1, flex: 1, borderRadius: 2 }}>
-                <Typography variant="subtitle2">Total</Typography>
-                <Typography variant="subtitle1" fontWeight="bold">{total.toFixed(2)} €</Typography>
-            </Card>
+                <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
 
-   
-            {totalByCategory.map(cat => (
-                <Card key={cat.category} sx={{ p: 1, flex: 1, borderRadius: 2 }}>
-                    <Typography variant="subtitle2">{cat.category}</Typography>
-                    <Typography variant="subtitle1" fontWeight="bold">{cat.amount.toFixed(2)} €</Typography>
-                </Card>
-            ))}
-        </Stack>
+                    <Card sx={{ p: 1, flex: 1, borderRadius: 2 }}>
+                        <Typography variant="subtitle2">Total</Typography>
+                        <Typography variant="subtitle1" fontWeight="bold">{total.toFixed(2)} €</Typography>
+                    </Card>
+
+
+                    {totalByCategory.map(cat => (
+                        <Card key={cat.category} sx={{ p: 1, flex: 1, borderRadius: 2 }}>
+                            <Typography variant="subtitle2">{cat.category}</Typography>
+                            <Typography variant="subtitle1" fontWeight="bold">{cat.amount.toFixed(2)} €</Typography>
+                        </Card>
+                    ))}
+                </Stack>
+            </Paper>
+        </>
+
     );
 }
