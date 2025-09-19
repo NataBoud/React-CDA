@@ -36,7 +36,7 @@ export default function ExpenseForm() {
     }
 
     return (
-        <Card sx={{ margin: '1rem auto', p: 2, borderRadius: 2, boxShadow: 3, backgroundColor: "#f0f3f8ff"}}>
+        <Card sx={{p: 2, borderRadius: 2, boxShadow: 3}}>
             <form onSubmit={handleSubmit}>
                 <Stack spacing={2}>
                     {/* Libellé */}

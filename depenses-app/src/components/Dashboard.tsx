@@ -22,12 +22,11 @@ export default function Dashboard({ expenses }: DashboardProps) {
 
     return (
         <>
-
-            <Paper elevation={2} sx={{ p: 2, backgroundColor: "#f0f3f8ff", borderRadius: 2, mb: 2}} >
+            <Paper elevation={3} sx={{ p: 2, borderRadius: 2, mb: 2}} >
 
                 <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
 
-                    <Card sx={{ p: 1, flex: 1, borderRadius: 2 }}>
+                    <Card elevation={1} sx={{ p: 1, flex: 1, borderRadius: 2 }}>
                         <Typography variant="subtitle2">Total</Typography>
                         <Typography variant="subtitle1" fontWeight="bold">{total.toFixed(2)} €</Typography>
                     </Card>

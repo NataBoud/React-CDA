@@ -1,11 +1,13 @@
 import ExpenseForm from "../components/ExpenseForm";
-import { Typography } from "@mui/material";
+import { Typography, Stack } from "@mui/material";
 
 export default function FormPage() {
     return (
-        <div className="form-container">
-            <Typography variant="h4" fontWeight="bold" sx={{ mb: 2, mt: 4 }}>Ajouter une dépense</Typography>
-            <ExpenseForm />
+        <div className="container">
+            <Stack sx={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
+                <Typography variant="h4" fontWeight="bold" sx={{ mb: 3 }}>Ajouter une dépense</Typography>
+                <ExpenseForm />
+            </Stack>
         </div>
     );
 }

@@ -12,15 +12,15 @@ export default function ExpenseList() {
 
     return (
         <Paper
-            elevation={3}
-            sx={{ p: 2, backgroundColor: "#f0f3f8ff", borderRadius: 2 }}
+            elevation={4}
+            sx={{ p: 2, borderRadius: 2 }}
         >
             <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ padding: "1rem" }}>
                 <Typography variant="h6" fontWeight="bold">Derniers dépenses</Typography>
                 <Button variant="outlined" color="primary" onClick={() => navigate("/form")}>Ajouter</Button>
             </Stack>
 
-            <Stack spacing={1}>
+            <Stack spacing={2}>
                 {expenses.slice().reverse().map((exp) => (
                     <ExpenseItem
                         key={exp.id}
