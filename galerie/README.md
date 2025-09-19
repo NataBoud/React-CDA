@@ -6,13 +6,13 @@ L’application simule un chargement asynchrone, gère un état de filtre, et af
 ## Aperçu
 
 ### Page d’accueil
-![Galerie 1](./images/gallerie-1.png)
+![Galerie-1](./images/gallerie-1.png)
 
 ### Filtres appliqués
-![Galerie 2](./images/gallerie-5.png)
+![Galerie-2](./images/gallerie-5.png)
 
 ### Aucun résultat
-![Galerie 2](./images/gallerie-2.png)
+![Galerie-2](./images/gallerie-2.png)
 
 ### Erreur
-![Galerie 2](./images/gallerie-3.png)
+![Galerie-2](./images/gallerie-3.png)
