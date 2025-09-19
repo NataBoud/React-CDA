@@ -5,10 +5,10 @@ import type { Category } from "../constants/categories"; // type
 import { addExpense } from "../store/expensesSlice";
 import { Card, TextField, MenuItem, Button, Stack, Typography } from "@mui/material";
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-
+import { useNavigate } from "react-router-dom";
 
 export default function ExpenseForm() {
-
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const [label, setLabel] = useState("");
@@ -36,7 +36,7 @@ export default function ExpenseForm() {
     }
 
     return (
-        <Card sx={{ margin: '1rem auto', p: 2, borderRadius: 2, boxShadow: 3, backgroundColor: "#f0f3f8ff", }}>
+        <Card sx={{ margin: '1rem auto', p: 2, borderRadius: 2, boxShadow: 3, backgroundColor: "#f0f3f8ff"}}>
             <form onSubmit={handleSubmit}>
                 <Stack spacing={2}>
                     {/* Libellé */}
@@ -49,9 +49,6 @@ export default function ExpenseForm() {
                             value={label}
                             onChange={e => setLabel(e.target.value)}
                             required
-                            fullWidth
-                            slotProps={{ inputLabel: { sx: { fontSize: "0.8rem" } }, }}
-                           
                         />
                     </Stack>
 
@@ -66,9 +63,6 @@ export default function ExpenseForm() {
                             value={amount}
                             onChange={e => setAmount(e.target.value === "" ? "" : Number(e.target.value))}
                             required
-                            fullWidth
-                            slotProps={{inputLabel: { sx: { fontSize: "0.8rem" }},}}
-                           
                         />
                     </Stack>
 
@@ -98,20 +92,14 @@ export default function ExpenseForm() {
                             label="Ex. jj/mm/aaaa"
                             value={date}
                             onChange={(newValue) => setDate(newValue)}
-                            slotProps={{
-                                textField: {
-                                    required: true,
-                                    fullWidth: true,
-                                },
-                            }}
+                            slotProps={{textField: {required: true,},}}
                         />
-
                     </Stack>
 
-                    <Button type="submit" variant="contained" color="primary" sx={{ alignSelf: "flex-end", mt: 4 }} >
-                        Ajouter
-                    </Button>
-
+                    <Stack direction="row" justifyContent="flex-end" spacing={1} sx={{ mt: 4 }}>
+                        <Button variant="outlined" color="primary" onClick={() => navigate("/")}>Retour</Button>
+                        <Button type="submit" variant="contained" color="primary">Créer</Button> 
+                    </Stack>
                 </Stack>
             </form>
         </Card>

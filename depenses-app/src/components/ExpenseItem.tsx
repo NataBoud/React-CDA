@@ -9,7 +9,7 @@ interface ExpenseCardProps {
 
 export default function ExpenseItem({ expense, onDelete }: ExpenseCardProps) {
     return (
-        <Card elevation={3} sx={{ display: "flex", justifyContent: "space-between", p: 2, }}>
+        <Card elevation={2} sx={{ display: "flex", justifyContent: "space-between", p: 2, borderRadius: 2 }}>
             <Stack>
                 <Typography variant="body1" fontWeight="bold">
                     {expense.label}
